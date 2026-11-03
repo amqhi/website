@@ -1,5 +1,8 @@
 <script lang="ts">
 	import {resolve} from '$app/paths';
+	import { useI18n } from '$lib/i18n';
+
+	const i18n = useI18n();
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import {
 		faGithub,
@@ -18,24 +21,23 @@
 				<img src="/logo512.png" alt="Amqhi Logo" class="w-7 h-7" />
 				<span>Amqhi</span>
 			</div>
-			<p class="text-slate-500">Back to the Basics.</p>
+			<p class="text-slate-500">{i18n.t('footer.tagline')}</p>
 		</div>
 		<div class="flex flex-col gap-3">
-			<span class="font-semibold">Products</span>
+			<span class="font-semibold">{i18n.t('nav.apps')}</span>
 			<a href={resolve("/cloud")} class="text-slate-500 hover:text-blue-500">Amqhi Cloud</a>
 			<a href={resolve("/music")} class="text-slate-500 hover:text-red-500">Amqhi Music</a>
 			<a href={resolve("/notes")} class="text-slate-500 hover:text-blue-400">Amqhi Notes</a>
 			<a href={resolve("/photos")} class="text-slate-500 hover:text-red-400">Amqhi Photos</a>
 			<a href={resolve("/web")} class="text-slate-500 hover:text-blue-400">Amqhi Web</a>
-			<a href={resolve("/pricing")} class="text-slate-500 hover:text-blue-400">Pricing</a>
+			<a href={resolve("/pricing")} class="text-slate-500 hover:text-blue-400">{i18n.t('nav.pricing')}</a>
 		</div>
-
 		<div class="flex flex-col gap-3">
-			<span class="font-semibold">Legal</span>
-			<a href={resolve("/privacy")} class="text-slate-500 hover:text-blue-400">Privacy</a>
-			<a href={resolve("/terms")} class="text-slate-500 hover:text-blue-400">Terms</a>
-			<a href={resolve("/imprint")} class="text-slate-500 hover:text-blue-400">Imprint</a>
-			<a href={resolve("/contact")} class="text-slate-500 hover:text-blue-400">Contact</a>
+			<span class="font-semibold">{i18n.t('footer.legal')}</span>
+			<a href={resolve("/privacy")} class="text-slate-500 hover:text-blue-400">{i18n.t('footer.privacy')}</a>
+			<a href={resolve("/terms")} class="text-slate-500 hover:text-blue-400">{i18n.t('footer.terms')}</a>
+			<a href={resolve("/imprint")} class="text-slate-500 hover:text-blue-400">{i18n.t('footer.imprint')}</a>
+			<a href={resolve("/contact")} class="text-slate-500 hover:text-blue-400">{i18n.t('footer.contact')}</a>
 		</div>
 		<div>
 			© 2026 Amqhi
