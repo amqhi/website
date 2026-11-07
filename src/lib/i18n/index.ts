@@ -55,7 +55,7 @@ const messages = {
 		'sr.style': 'Style',
 		'app.cloud.tagline': 'Where all of my data comes together.',
 		'app.cloud.description':
-			'Amqhi Cloud handles files, folders, notes, music, and every other kind of data in one place, like a file manager. Data from the other apps shows up here as files, and files you add can be used right away in each dedicated app.',
+			'Amqhi Cloud manages files, folders, notes, music, and all your data in one place, just like a file manager. Data from other apps appears here as files, and files you add can be used right away in each dedicated app.',
 		'app.music.tagline': 'A premium music library in my hands.',
 		'app.music.description':
 			'Amqhi Music lets you freely edit music metadata and synced lyrics. Refine the details yourself and build a premium music library of your own.',
