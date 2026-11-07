@@ -105,6 +105,11 @@
 
 	const system = $derived(systems.find((item) => item.id === osId) ?? systems[0]);
 	const install = $derived(system.installs.find((item) => item.id === installId) ?? system.installs[0]);
+	const preview = $derived(
+		id === 'cloud' && install.id === 'apk' && styleId === 'flat'
+			? '/images/cloud/android-flat.webp'
+			: screenshot
+	);
 	const command = $derived.by(() => {
 		if (install.id === 'scoop') return `scoop install amqhi-${id}`;
 		if (install.id === 'homebrew') return `brew install amqhi-${id}`;
@@ -161,8 +166,8 @@
 		<img src={logo} alt="" class="h-16 w-16" />
 		<h1 class="mt-6 text-5xl font-semibold tracking-tight text-foreground">{name}</h1>
 		<p class="mt-4 text-lg text-muted-foreground">{i18n.t(`app.${id}.tagline` as MessageId)}</p>
-		{#if screenshot}
-			<img src={screenshot} alt="{name} screenshot" class="mt-12 w-full rounded-lg" />
+		{#if preview}
+			<img src={preview} alt="{name} screenshot" class="mt-12 w-full rounded-lg" />
 		{:else}
 			<div class="mt-12 aspect-video w-full rounded-lg bg-muted" aria-hidden="true"></div>
 		{/if}
