@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import CodeIcon from '@lucide/svelte/icons/code';
+	import GlobeIcon from '@lucide/svelte/icons/globe';
+	import MessageSquareIcon from '@lucide/svelte/icons/message-square';
+	import ServerIcon from '@lucide/svelte/icons/server';
 	import { useI18n, type MessageId } from '$lib/i18n';
 
 	type Arch = 'x64' | 'arm64' | 'universal' | 'arm64-v8a' | 'armeabi-v7a' | 'x86' | 'x86_64';
@@ -98,6 +101,11 @@
 	let osId = $state(systems[0].id);
 	let styleId = $state('flat');
 	const sourceUrl = $derived(`https://github.com/amqhi/${id}-${osId}`);
+	// TODO: Create a page for improving translations.
+	const translateUrl = $derived(sourceUrl);
+	const feedbackUrl = 'mailto:support@amqhi.com';
+	// TODO: Create a page for server.
+	const serverUrl = 'https://github.com/amqhi/server';
 	let installId = $state(systems[0].installs[0].id);
 	let arch = $state<Arch>(systems[0].installs[0].arches?.[0] ?? 'x64');
 	let copied = $state(false);
@@ -265,14 +273,25 @@
 				{i18n.t('comingSoon')}
 			</button>
 		{/if}
-		<a
-			href={sourceUrl}
-			target="_blank"
-			rel="noopener noreferrer"
-			class="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
-		>
-			<CodeIcon class="size-4" />
-			{i18n.t('source')}
-		</a>
+		<div class="mt-6 grid w-full grid-cols-1 gap-4 lg:grid-cols-4">
+			{#each [
+				{ title: 'link.sourceTitle', body: 'link.sourceBody', href: sourceUrl, icon: CodeIcon },
+				{ title: 'link.translateTitle', body: 'link.translateBody', href: translateUrl, icon: GlobeIcon },
+				{ title: 'link.feedbackTitle', body: 'link.feedbackBody', href: feedbackUrl, icon: MessageSquareIcon },
+				{ title: 'link.serverTitle', body: 'link.serverBody', href: serverUrl, icon: ServerIcon }
+			] as card (card.title)}
+				{@const Icon = card.icon}
+				<a
+					href={card.href}
+					target={card.href.startsWith('http') ? '_blank' : undefined}
+					rel={card.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+					class="rounded-lg border p-4 text-left hover:bg-muted"
+				>
+					<Icon class="size-5 text-foreground" aria-hidden="true" />
+					<h2 class="mt-3 text-sm font-semibold text-foreground">{i18n.t(card.title as MessageId)}</h2>
+					<p class="mt-1 text-sm text-muted-foreground">{i18n.t(card.body as MessageId)}</p>
+				</a>
+			{/each}
+		</div>
 	</div>
 </main>
