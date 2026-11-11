@@ -30,6 +30,7 @@
 			<a href={resolve("/notes")} class="text-slate-500 hover:text-blue-400">Amqhi Notes</a>
 			<a href={resolve("/photos")} class="text-slate-500 hover:text-red-400">Amqhi Photos</a>
 			<a href={resolve("/web")} class="text-slate-500 hover:text-blue-400">Amqhi Web</a>
+			<a href={resolve("/ai")} class="text-slate-500 hover:text-blue-400">Amqhi AI</a>
 		</div>
 		<div class="flex flex-col gap-3">
 			<span class="font-semibold">{i18n.t('nav.servers')}</span>
