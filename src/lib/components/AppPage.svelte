@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { onMount } from 'svelte';
 	import CodeIcon from '@lucide/svelte/icons/code';
 	import GlobeIcon from '@lucide/svelte/icons/globe';
@@ -104,8 +105,7 @@
 	// TODO: Create a page for improving translations.
 	const translateUrl = $derived(sourceUrl);
 	const feedbackUrl = 'mailto:support@amqhi.com';
-	// TODO: Create a page for server.
-	const serverUrl = 'https://github.com/amqhi/server';
+	const serverUrl = resolve('/server');
 	let installId = $state(systems[0].installs[0].id);
 	let arch = $state<Arch>(systems[0].installs[0].arches?.[0] ?? 'x64');
 	let copied = $state(false);
