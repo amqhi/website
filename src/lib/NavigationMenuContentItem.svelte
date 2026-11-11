@@ -25,7 +25,9 @@ let {
 		<div class="flex flex-col gap-1 text-sm hover:{hover}">
 
 			<div class="title">
-				<img src={imgSrc} width="36px" alt={title}/>
+				{#if imgSrc}
+					<img src={imgSrc} width="36px" alt={title}/>
+				{/if}
 				{title}
 			</div>
 			<div class="line-clamp-2 text-muted-foreground">

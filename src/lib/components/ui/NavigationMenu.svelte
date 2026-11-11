@@ -4,7 +4,6 @@
 	import {
 		NavigationMenuContent,
 		NavigationMenuItem,
-		NavigationMenuLink,
 		NavigationMenuList,
 		NavigationMenuRoot,
 		NavigationMenuTrigger
@@ -16,6 +15,7 @@
 
 	const i18n = useI18n();
 	let appsOpen = $state(false);
+	let serversOpen = $state(false);
 
 	const apps = [
 		{
@@ -90,12 +90,19 @@
 					</NavigationMenuContent>
 				</NavigationMenuItem>
 				<NavigationMenuItem>
-					<NavigationMenuLink
-						href="/pricing"
-						class="px-4 py-2 text-sm font-medium {page.url.pathname === '/pricing' ? 'text-blue-500' : ''}"
-					>
-						{i18n.t('nav.pricing')}
-					</NavigationMenuLink>
+					<NavigationMenuTrigger class={page.url.pathname === '/server' ? 'text-blue-500' : ''}>
+						{i18n.t('nav.servers')}
+					</NavigationMenuTrigger>
+					<NavigationMenuContent>
+						<ul class="grid w-72 gap-2">
+							<NavigationMenuContentItem
+								title={i18n.t('server.app.title')}
+								description={i18n.t('server.app.description')}
+								href="/server"
+								hover="text-blue-500"
+							/>
+						</ul>
+					</NavigationMenuContent>
 				</NavigationMenuItem>
 			</NavigationMenuList>
 		</NavigationMenuRoot>
@@ -121,12 +128,23 @@
 					{/each}
 				</div>
 			{/if}
-			<a
-				href="/pricing"
-				class="rounded-md px-2 py-2 text-sm font-medium hover:bg-muted {page.url.pathname === '/pricing' ? 'text-blue-500' : ''}"
+			<button
+				type="button"
+				class="flex w-full items-center justify-between rounded-md px-2 py-2 text-sm font-medium hover:bg-muted {page.url.pathname === '/server' ? 'text-blue-500' : ''}"
+				aria-expanded={serversOpen}
+				onclick={() => (serversOpen = !serversOpen)}
 			>
-				{i18n.t('nav.pricing')}
-			</a>
+				{i18n.t('nav.servers')}
+				<ChevronDownIcon class="size-4 transition-transform {serversOpen ? 'rotate-180' : ''}" />
+			</button>
+			{#if serversOpen}
+				<a
+					href="/server"
+					class="rounded-md py-2 pr-2 pl-4 text-sm font-medium hover:bg-muted {page.url.pathname === '/server' ? 'text-blue-500' : ''}"
+				>
+					{i18n.t('server.app.title')}
+				</a>
+			{/if}
 		</nav>
 	{/snippet}
 </SiteHeader>

@@ -12,6 +12,7 @@ const messages = {
 		'theme.system': 'System',
 		'theme.label': 'Theme',
 		'nav.apps': 'Apps',
+		'nav.servers': 'Servers',
 		'nav.pricing': 'Pricing',
 		'nav.open': 'Open menu',
 		'nav.close': 'Close menu',
@@ -75,6 +76,8 @@ const messages = {
 		'app.web.tagline': 'My exploration, continued anywhere.',
 		'app.web.description':
 			'Amqhi Web carries the flow of browsing with you, anytime and anywhere. Reach your bookmarks and history immediately, free from the limits of an operating system or hardware.',
+		'server.app.title': 'Server for Apps',
+		'server.app.description': 'One server that syncs data across all apps.',
 		'app.ai.tagline': 'A powerful assistant that helps me anywhere.',
 		'app.ai.description':
 			'Amqhi AI is an intelligent assistant that fully supports everyday life by drawing on data from the other apps in the ecosystem.'
@@ -88,12 +91,14 @@ const messages = {
 		'theme.system': '시스템',
 		'theme.label': '테마',
 		'nav.apps': '앱',
+		'nav.servers': '서버',
 		'nav.pricing': '요금',
 		'nav.open': '메뉴 열기',
 		'nav.close': '메뉴 닫기',
 		'home.title': 'Amqhi - 다시 기본으로',
 		'home.heroTitle': '다시 기본으로',
-		'home.heroBody': '온전히 당신이 소유하던 가볍고 빠른 유틸리티를 제자리에, 당신이 좋아하던 스타일로.',
+		'home.heroBody':
+			'온전히 당신이 소유하던 가볍고 빠른 유틸리티를 제자리에, 당신이 좋아하던 스타일로.',
 		'home.getStarted': '시작하기',
 		'home.fastTitle': '빠름',
 		'home.fastBody': '앱이 켜질 때까지 기다릴 필요 없습니다.',
@@ -150,6 +155,8 @@ const messages = {
 		'app.web.tagline': '어디서나 이어지는 나의 탐험',
 		'app.web.description':
 			'Amqhi Web은 웹 탐색의 흐름을 언제 어디서나 자유롭게 이어줍니다. 운영체제와 하드웨어의 제약 없이 북마크와 검색 기록에 즉시 접근해 보세요.',
+		'server.app.title': '앱 통합 서버',
+		'server.app.description': '모든 앱들의 데이터를 동기화하는 하나의 서버.',
 		'app.ai.tagline': '어디서나 나를 돕는 강력한 어시스턴트',
 		'app.ai.description':
 			'Amqhi AI는 생태계 내 다른 앱의 데이터를 종합적으로 활용하여 일상을 완벽하게 보조하는 지능형 어시스턴트입니다.'
