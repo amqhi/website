@@ -78,6 +78,10 @@ const messages = {
 			'Amqhi Web carries the flow of browsing with you, anytime and anywhere. Reach your bookmarks and history immediately, free from the limits of an operating system or hardware.',
 		'server.app.title': 'Server for Apps',
 		'server.app.description': 'One server that syncs data across all apps.',
+		'server.page.heading': 'Download the Amqhi app server',
+		'server.page.body':
+			"Sync every app's data, from Amqhi Cloud to Amqhi AI, with a single server.",
+		'server.page.hosting': 'If setting up a server is a hassle, subscribe to cloud hosting.',
 		'app.ai.tagline': 'A powerful assistant that helps me anywhere.',
 		'app.ai.description':
 			'Amqhi AI is an intelligent assistant that fully supports everyday life by drawing on data from the other apps in the ecosystem.'
@@ -157,6 +161,10 @@ const messages = {
 			'Amqhi Web은 웹 탐색의 흐름을 언제 어디서나 자유롭게 이어줍니다. 운영체제와 하드웨어의 제약 없이 북마크와 검색 기록에 즉시 접근해 보세요.',
 		'server.app.title': '앱 통합 서버',
 		'server.app.description': '모든 앱들의 데이터를 동기화하는 하나의 서버.',
+		'server.page.heading': 'Amqhi 앱 서버 다운로드',
+		'server.page.body':
+			'하나의 서버로 Amqhi Cloud부터 Amqhi AI까지 모든 앱의 데이터를 동기화해 보세요.',
+		'server.page.hosting': '만약 서버 설정이 번거로우시다면 클라우드 호스팅을 구독하세요.',
 		'app.ai.tagline': '어디서나 나를 돕는 강력한 어시스턴트',
 		'app.ai.description':
 			'Amqhi AI는 생태계 내 다른 앱의 데이터를 종합적으로 활용하여 일상을 완벽하게 보조하는 지능형 어시스턴트입니다.'
